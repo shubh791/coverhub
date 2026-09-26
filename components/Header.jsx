@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { navLinks, brandInfo } from "@/data/content";
+import { navLinks } from "@/data/content";
 
 /**
  * Header / Navbar — Premium Ayurvedic Transparent to Dark Translucent Transition
@@ -16,7 +16,7 @@ import { navLinks, brandInfo } from "@/data/content";
  * - Real-time viewport-center active section tracking; immediate active state update on link click.
  * - Compact, premium gold action button (#C9A45C -> #DFBC75) with clear border and dark text.
  * - Single state-controlled mobile toggle (hamburger when closed, single 44x44px close icon when open).
- * - Full-width dark mobile menu drawer with outside-click dismissal.
+ * - Clean mobile dropdown containing only navigation links and primary CTA with outside-click dismissal.
  */
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -302,57 +302,36 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-x-0 top-[57px] sm:top-[61px] z-50 flex flex-col justify-between bg-[#060D08]/98 backdrop-blur-xl px-6 py-8 md:hidden h-[calc(100dvh-57px)] sm:h-[calc(100dvh-61px)] overflow-y-auto border-t border-[#C9A45C]/25 shadow-2xl"
+            className="fixed inset-x-0 top-[57px] sm:top-[61px] z-50 flex flex-col bg-[#060D08]/98 backdrop-blur-xl px-6 py-8 md:hidden h-[calc(100dvh-57px)] sm:h-[calc(100dvh-61px)] overflow-y-auto border-t border-[#C9A45C]/25 shadow-2xl space-y-6"
           >
-            <div className="flex flex-col space-y-6">
-              <div className="border-b border-[#1C3627]/90 pb-3">
-                <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C9A45C] font-semibold">
-                  Navigation Index
-                </p>
-              </div>
-
-              <nav className="flex flex-col space-y-4" aria-label="Mobile Navigation Links">
-                {navLinks.map((link, idx) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    onClick={() => closeMenu(link.href)}
-                    className="flex items-baseline justify-between border-b border-[#1C3627]/50 pb-3 font-serif text-2xl text-[#F7F0DE] transition-colors hover:text-[#DFBC75] focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#C9A45C]"
-                  >
-                    <span>{link.label}</span>
-                    <span className="font-mono text-xs text-[#C9A45C]">0{idx + 1}</span>
-                  </a>
-                ))}
-              </nav>
-
-              <div className="pt-3">
-                <a
-                  href="#partnerships"
-                  onClick={() => closeMenu("#partnerships")}
-                  className="flex w-full items-center justify-center rounded-xs bg-gradient-to-r from-[#C9A45C] via-[#D8B66A] to-[#DFBC75] py-3.5 text-center font-mono text-xs uppercase tracking-widest text-[#080E0A] font-bold border border-[#E8CA83] shadow-[0_2px_12px_rgba(0,0,0,0.5)] transition-all hover:from-[#DFBC75] hover:to-[#EED494]"
-                >
-                  Partner Enquiries
-                </a>
-              </div>
+            <div className="border-b border-[#1C3627]/90 pb-3">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#C9A45C] font-semibold">
+                Navigation Index
+              </p>
             </div>
 
-            {/* Mobile Drawer Bottom Identity */}
-            <div className="mt-8 border-t border-[#1C3627] pt-5">
-              <Link
-                href="/#home"
-                onClick={(e) => {
-                  handleBrandClick(e);
-                  closeMenu();
-                }}
-                className="inline-block focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#C9A45C] rounded-xs cursor-pointer group"
+            <nav className="flex flex-col space-y-4" aria-label="Mobile Navigation Links">
+              {navLinks.map((link, idx) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={() => closeMenu(link.href)}
+                  className="flex items-baseline justify-between border-b border-[#1C3627]/50 pb-3 font-serif text-2xl text-[#F7F0DE] transition-colors hover:text-[#DFBC75] focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#C9A45C]"
+                >
+                  <span>{link.label}</span>
+                  <span className="font-mono text-xs text-[#C9A45C]">0{idx + 1}</span>
+                </a>
+              ))}
+            </nav>
+
+            <div className="pt-2">
+              <a
+                href="#partnerships"
+                onClick={() => closeMenu("#partnerships")}
+                className="flex w-full items-center justify-center rounded-xs bg-gradient-to-r from-[#C9A45C] via-[#D8B66A] to-[#DFBC75] py-3.5 text-center font-mono text-xs uppercase tracking-widest text-[#080E0A] font-bold border border-[#E8CA83] shadow-[0_2px_12px_rgba(0,0,0,0.5)] transition-all hover:from-[#DFBC75] hover:to-[#EED494]"
               >
-                <p className="font-serif text-base text-[#F7F0DE] group-hover:text-[#DFBC75] transition-colors">
-                  {brandInfo.name}
-                </p>
-              </Link>
-              <p className="text-xs text-[#DED3BA] leading-relaxed mt-0.5">
-                Ayurvedic Wellness Products
-              </p>
+                Partner Enquiries
+              </a>
             </div>
           </motion.div>
         )}
