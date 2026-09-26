@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%" fill="none">
+  <!-- Cover Hub Official Symbol: Leaf & Mortar Emblem -->
+  <g transform="translate(4, 3) scale(0.92)">
+    <!-- Outer Circular Rim (Botanical Green) -->
+    <path d="M 50 14 C 28 14 16 32 16 56 C 16 72 26 82 40 85 L 38 88 L 62 88 L 60 85 C 74 82 84 72 84 56 C 84 48 80 40 76 35 C 75 34 74 35 74 36 C 77 42 78 48 78 55 C 78 69 68 79 50 79 C 32 79 22 69 22 55 C 22 36 34 20 50 20 C 58 20 65 24 70 29 C 71 30 72 29 71 28 C 66 21 58 14 50 14 Z" fill="#1B8E2D" />
+    
+    <!-- Mortar Base Foot -->
+    <path d="M 40 86 L 38 91 L 62 91 L 60 86 Z" fill="#147824" />
+
+    <!-- Pestle (Rich Botanical Brown / Terracotta) -->
+    <path d="M 74 32 C 77 34 79 38 78 42 C 77 45 74 46 71 45 L 59 55 L 52 48 L 64 38 C 63 35 65 32 68 31 C 70 30 73 30 74 32 Z" fill="#854124" />
+    <!-- Pestle Highlight -->
+    <path d="M 72 34 C 74 35 75 38 74 40 L 63 49 L 60 46 L 68 37 C 69 35 70 34 72 34 Z" fill="#995030" opacity="0.6" />
+
+    <!-- Lower Mortar Bowl Body (Fresh Herbal Green) -->
+    <path d="M 23 55 C 25 73 38 81 50 81 C 62 81 75 73 77 55 C 70 65 58 69 48 69 C 36 69 27 63 23 55 Z" fill="#20A334" />
+    <path d="M 27 58 C 32 71 42 77 50 77 C 58 77 68 71 73 58 C 66 66 56 69 48 69 C 38 69 31 64 27 58 Z" fill="#75C724" />
+
+    <!-- Large Upper Leaf (Vibrant Botanical Leaf) -->
+    <path d="M 24 53 C 24 40 32 25 48 22 C 60 20 67 28 65 39 C 63 48 52 54 38 54 C 32 54 27 54 24 53 Z" fill="#73C623" />
+    <!-- Upper Leaf Inner Shading & Spine -->
+    <path d="M 24 53 C 29 42 38 31 49 27 C 58 24 64 29 63 37 C 62 43 54 48 43 50 C 35 51 29 52 24 53 Z" fill="#88D82A" />
+    <path d="M 25 53 Q 42 42 55 26" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.85" />
+
+    <!-- Lower Horizontal Leaf (Overlapping Bowl Rim) -->
+    <path d="M 24 54 C 34 54 50 56 63 58 C 74 60 81 55 83 50 C 78 61 63 67 48 67 C 36 67 27 62 24 54 Z" fill="#1B8E2D" />
+    <path d="M 27 55 C 36 55 52 57 65 59 C 73 60 78 57 80 52 C 75 60 62 65 48 65 C 38 65 30 61 27 55 Z" fill="#70C422" />
+    <path d="M 28 55 Q 52 59 74 54" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.7" />
+  </g>
+</svg>
