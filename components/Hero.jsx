@@ -47,11 +47,12 @@ export default function Hero() {
 
   return (
     <section
-      id="hero"
+      id="home"
       ref={sectionRef}
-      className="relative bg-[#060D08] min-h-[640px] sm:min-h-[720px] lg:min-h-[800px] xl:min-h-[860px] pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-14 sm:pb-16 lg:pb-20 overflow-hidden flex flex-col justify-center text-[#F7F0DE]"
+      className="relative bg-[#060D08] min-h-[640px] sm:min-h-[720px] lg:min-h-[800px] xl:min-h-[860px] pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-14 sm:pb-16 lg:pb-20 overflow-hidden flex flex-col justify-center text-[#F7F0DE] scroll-mt-24"
       aria-labelledby="hero-heading"
     >
+      <div id="hero" className="sr-only" aria-hidden="true" />
       {/* ========================================================================= */}
       {/* FULL-BLEED PREMIUM HERO BACKDROP (WebP with PNG Fallback)                  */}
       {/* ========================================================================= */}

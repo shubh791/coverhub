@@ -11,10 +11,9 @@ import { navLinks, brandInfo } from "@/data/content";
  * Aesthetic & Functional Features:
  * - Transparent over hero with a subtle top dark-gradient scrim for maximum text contrast.
  * - Transitions smoothly on scroll into deep forest-black translucent background (#060D08/90) with backdrop blur and antique-gold bottom border.
- * - Prominent, balanced brand identity with Cover Hub symbol and warm ivory wordmark.
+ * - Clickable brand logo with smooth scroll to top (#home), URL hash update, and cross-route navigation.
  * - Warm Ivory (#F7F0DE) navigation links with light text shadow, silky gold hover states and animated underlines.
  * - Real-time viewport-center active section tracking; immediate active state update on link click.
- * - Clear active state when on the Hero (no false "Heritage" highlight).
  * - Compact, premium gold action button (#C9A45C -> #DFBC75) with clear border and dark text.
  * - Full-width dark mobile menu drawer with comfortable spacing.
  */
@@ -38,9 +37,9 @@ export default function Header() {
       // Skip scroll-based recalculation during smooth scroll initiated by a user click
       if (isManualClickRef.current) return;
 
-      // When near top of page (Hero section), clear active nav link
+      // When near top of page (Hero section), set active to home/clear sub-links
       if (scrollY < 260) {
-        setActiveSection("");
+        setActiveSection("home");
         return;
       }
 
@@ -88,6 +87,22 @@ export default function Header() {
       }
     };
   }, []);
+
+  const handleBrandClick = (e) => {
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setActiveSection("home");
+      window.history.pushState(null, "", "/#home");
+      isManualClickRef.current = true;
+      if (manualClickTimeoutRef.current) {
+        clearTimeout(manualClickTimeoutRef.current);
+      }
+      manualClickTimeoutRef.current = setTimeout(() => {
+        isManualClickRef.current = false;
+      }, 900);
+    }
+  };
 
   const handleNavClick = (href) => {
     const linkId = href.replace("#", "");
@@ -145,13 +160,11 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Wordmark & Identity */}
+          {/* Brand Wordmark & Identity with Smooth Scroll to Top */}
           <Link
-            href="/"
-            onClick={() => {
-              setActiveSection("");
-            }}
-            className="group flex items-center gap-2.5 sm:gap-3 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#C9A45C] rounded-xs"
+            href="/#home"
+            onClick={handleBrandClick}
+            className="group flex items-center gap-2.5 sm:gap-3 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#C9A45C] rounded-xs cursor-pointer"
             aria-label="Cover Hub - Home"
           >
             <img
@@ -306,18 +319,25 @@ export default function Header() {
 
             {/* Mobile Drawer Bottom Identity */}
             <div className="mt-8 border-t border-[#1C3627] pt-5">
-              <div className="flex items-center gap-2.5 mb-1.5">
+              <Link
+                href="/#home"
+                onClick={(e) => {
+                  handleBrandClick(e);
+                  closeMenu();
+                }}
+                className="flex items-center gap-2.5 mb-1.5 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#C9A45C] rounded-xs cursor-pointer group"
+              >
                 <img
                   src="/images/branding/coverhub-symbol.svg"
                   alt="Cover Hub"
-                  className="w-5 h-5 object-contain shrink-0"
+                  className="w-5 h-5 object-contain shrink-0 group-hover:scale-105 transition-transform"
                   width={20}
                   height={20}
                 />
-                <p className="font-serif text-base text-[#F7F0DE]">
+                <p className="font-serif text-base text-[#F7F0DE] group-hover:text-[#DFBC75] transition-colors">
                   {brandInfo.name}
                 </p>
-              </div>
+              </Link>
               <p className="text-xs text-[#DED3BA] leading-relaxed">
                 Ayurvedic Wellness Products
               </p>
