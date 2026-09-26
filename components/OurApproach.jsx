@@ -60,9 +60,50 @@ const stepDelays = [0.2, 0.75, 1.3, 1.85];
 
 export default function OurApproach() {
   const sectionRef = useRef(null);
+  const videoRef = useRef(null);
   const hasAnimatedRef = useRef(false);
   const [inView, setInView] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const shouldReduceMotion = useReducedMotion();
+
+  // Safely trigger mobile muted autoplay on mount and retry on first user interaction
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+
+    const playVideo = () => {
+      const promise = video.play();
+      if (promise !== undefined) {
+        promise
+          .then(() => {
+            setIsVideoPlaying(true);
+          })
+          .catch((err) => {
+            // Autoplay restricted on mobile power save or policy; poster fallback stays visible
+            console.debug("Video autoplay restricted; fallback poster active:", err);
+          });
+      }
+    };
+
+    playVideo();
+
+    const handleInteraction = () => {
+      playVideo();
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
+    };
+
+    window.addEventListener("touchstart", handleInteraction, { passive: true, once: true });
+    window.addEventListener("click", handleInteraction, { passive: true, once: true });
+
+    return () => {
+      window.removeEventListener("touchstart", handleInteraction);
+      window.removeEventListener("click", handleInteraction);
+    };
+  }, []);
 
   useEffect(() => {
     // If reduced motion is preferred, reveal immediately without animation
@@ -107,18 +148,41 @@ export default function OurApproach() {
       aria-labelledby="approach-heading"
     >
       {/* ========================================================================= */}
-      {/* BALANCED CINEMATIC BACKGROUND VIDEO                                       */}
+      {/* BALANCED CINEMATIC BACKGROUND VIDEO WITH SEAMLESS FIRST-FRAME POSTER FADE  */}
       {/* ========================================================================= */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0 bg-[#08120C]">
+        
+        {/* Exact First-Frame Fallback Poster */}
+        <picture>
+          <source srcSet="/images/approach/approach-video-poster.webp" type="image/webp" />
+          <img
+            src="/images/approach/approach-video-poster.jpg"
+            alt="Ayurvedic preparation and formulation process"
+            className={`absolute inset-0 w-full h-full object-cover object-center scale-105 select-none transition-opacity duration-700 ${
+              isVideoPlaying ? "opacity-0" : "opacity-100"
+            }`}
+          />
+        </picture>
+
+        {/* Video Element with Mobile Safe Attributes & Autoplay Handler */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
-          poster="/images/approach/editorial-tabletop.jpg"
+          webkit-playsinline="true"
+          preload="auto"
+          poster="/images/approach/approach-video-poster.webp"
           controls={false}
-          className="w-full h-full object-cover object-center scale-105 select-none"
+          disablePictureInPicture
+          disableRemotePlayback
+          onPlaying={() => setIsVideoPlaying(true)}
+          onCanPlay={() => setIsVideoPlaying(true)}
+          onLoadedData={() => setIsVideoPlaying(true)}
+          className={`w-full h-full object-cover object-center scale-105 select-none pointer-events-none transition-opacity duration-700 ${
+            isVideoPlaying ? "opacity-100" : "opacity-0"
+          } [&::-webkit-media-controls]:hidden! [&::-webkit-media-controls-play-button]:hidden! [&::-webkit-media-controls-start-playback-button]:hidden! [&::-webkit-media-controls-overlay-play-button]:hidden!`}
         >
           <source src={approachContent.videoSrc} type="video/mp4" />
         </video>
