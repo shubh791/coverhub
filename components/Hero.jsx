@@ -207,9 +207,9 @@ export default function Hero() {
               className="mt-8 sm:mt-10 pt-5 border-t border-[#1C3627]/90"
             >
               <a
-                href="#philosophy"
+                href={heroContent.transitionTarget || "#approach"}
                 className="group inline-flex items-center gap-2.5 rounded-full border border-[#C9A45C]/40 bg-[#09150E]/80 backdrop-blur-md px-4 py-2 text-xs font-mono uppercase tracking-wider text-[#F7F0DE] font-medium shadow-2xs hover:border-[#DFBC75] hover:text-[#DFBC75] transition-all duration-200 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#C9A45C]"
-                aria-label="Explore Our Philosophy - Scroll to philosophy section"
+                aria-label="Explore Our Approach - Scroll to approach section"
               >
                 <span>{heroContent.transitionText}</span>
                 <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#C9A45C]/20 text-[#DFBC75] transition-colors duration-200 group-hover:bg-[#C9A45C] group-hover:text-[#080E0A]">

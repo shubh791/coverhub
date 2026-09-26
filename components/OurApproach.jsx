@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { approachContent } from "@/data/content";
 
 /**
- * Chapter 05: Our Approach — Balanced Cinematic Video & Connected Process
+ * Chapter 02: Our Approach — Balanced Cinematic Video & Connected Process
  * 
  * Visual & Animation Highlights:
  * - Reduced overlay opacity: Warm brass, herbs, hands, and sunlight in the video remain vibrantly visible.
@@ -192,9 +192,9 @@ export default function OurApproach() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#08120C]/75 via-[#08120C]/30 to-[#080E0A]/85 pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_50%,transparent_30%,rgba(6,14,9,0.55)_100%)] pointer-events-none" />
 
-        {/* Seamless Top and Bottom Blend Fades */}
-        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#EFE6D8]/20 via-[#08120C]/65 to-transparent pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#080E0A] via-[#080E0A]/75 to-transparent pointer-events-none" />
+        {/* Seamless Top and Bottom Blend Fades (Hero -> Our Approach -> Collections) */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#060D08] via-[#08120C]/65 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0D1E15] via-[#080E0A]/75 to-transparent pointer-events-none" />
       </div>
 
       {/* Ambient Warm Golden Sun Flare Accent */}
@@ -212,41 +212,41 @@ export default function OurApproach() {
           transition={{ duration: shouldReduceMotion ? 0 : 0.65, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-14 sm:mb-18 lg:mb-22"
         >
-          {/* Chapter 05 Ayurvedic Manuscript Marker */}
+          {/* Chapter 02 Ayurvedic Manuscript Marker */}
           <div className="mb-4 sm:mb-5 flex items-center justify-center">
-            <div className="relative inline-flex items-center gap-2.5 py-1 pr-4 pl-0.5 select-none">
-              {/* Faint parchment brush texture behind label */}
-              <div className="absolute inset-0 -inset-x-3 bg-[radial-gradient(ellipse_at_center,_rgba(201,164,92,0.22)_0%,_rgba(18,36,26,0.3)_60%,_transparent_100%)] blur-xs rounded-full pointer-events-none" />
+            <div className="relative inline-flex items-center gap-2 sm:gap-2.5 py-1 pr-3 sm:pr-4 pl-0.5 select-none">
+              {/* Enhanced parchment brush texture for crisp contrast */}
+              <div className="absolute inset-0 -inset-x-3 bg-[radial-gradient(ellipse_at_left,_rgba(216,182,106,0.3)_0%,_rgba(10,24,16,0.75)_65%,_transparent_100%)] blur-xs rounded-full pointer-events-none" />
 
               {/* Antique-Gold Circular Number Seal */}
               <motion.div
                 initial={{ scale: shouldReduceMotion ? 1 : 0.7, opacity: shouldReduceMotion ? 1 : 0 }}
                 animate={inView ? { scale: 1, opacity: 1 } : { scale: shouldReduceMotion ? 1 : 0.7, opacity: shouldReduceMotion ? 1 : 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative z-10 w-7 h-7 rounded-full bg-gradient-to-tr from-[#12241A] to-[#1C3A2B] border border-[#C9A45C] shadow-[0_0_12px_rgba(201,164,92,0.3)] flex items-center justify-center shrink-0"
+                className="relative z-10 w-7 h-7 rounded-full bg-gradient-to-tr from-[#0E1C14] to-[#1C3A2B] border border-[#D8B66A] shadow-[0_0_14px_rgba(216,182,106,0.4)] flex items-center justify-center shrink-0"
               >
-                <span className="font-serif text-[11px] font-bold text-[#DFBC75] leading-none">
-                  05
+                <span className="font-serif text-[11px] font-bold text-[#D8B66A] leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
+                  02
                 </span>
-                <span className="absolute -inset-0.5 rounded-full border border-[#C9A45C]/35 pointer-events-none" />
+                <span className="absolute -inset-0.5 rounded-full border border-[#D8B66A]/45 pointer-events-none" />
               </motion.div>
 
               {/* Manuscript Typography & Animated Botanical Stem */}
-              <div className="relative z-10 flex items-center gap-2">
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#C9A45C] font-semibold">
-                  Chapter 05
+              <div className="relative z-10 flex items-center gap-1.5 sm:gap-2 flex-wrap sm:flex-nowrap">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#D8B66A] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                  Chapter 02
                 </span>
-                <span className="text-[#DFBC75] text-xs font-serif">·</span>
-                <span className="font-serif text-xs text-[#DED3BA] tracking-wider italic">
+                <span className="text-[#D8B66A] text-xs font-serif font-bold">·</span>
+                <span className="font-serif text-[12.5px] sm:text-xs text-[#FFF7E6] tracking-wider italic font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
                   Our Approach
                 </span>
 
                 {/* Connected Botanical Line with Leaf Illustrations */}
-                <svg className="w-14 sm:w-18 h-4 text-[#C9A45C] overflow-visible shrink-0 ml-1" viewBox="0 0 64 16" fill="none" aria-hidden="true">
+                <svg className="w-12 sm:w-18 h-4 text-[#D8B66A] overflow-visible shrink-0 ml-0.5 sm:ml-1" viewBox="0 0 64 16" fill="none" aria-hidden="true">
                   <motion.path
                     d="M 0 8 L 54 8"
-                    stroke="#C9A45C"
-                    strokeWidth="1.2"
+                    stroke="#D8B66A"
+                    strokeWidth="1.3"
                     strokeLinecap="round"
                     initial={{ pathLength: shouldReduceMotion ? 1 : 0 }}
                     animate={inView ? { pathLength: 1 } : { pathLength: shouldReduceMotion ? 1 : 0 }}
@@ -257,9 +257,9 @@ export default function OurApproach() {
                     animate={inView ? { opacity: 1, scale: 1 } : { opacity: shouldReduceMotion ? 1 : 0, scale: shouldReduceMotion ? 1 : 0.5 }}
                     transition={{ duration: 0.4, delay: 0.5 }}
                   >
-                    <path d="M 18 8 C 20 3, 26 4, 23 8 Z" fill="#152B20" stroke="#C9A45C" strokeWidth="0.6" />
-                    <path d="M 36 8 C 38 13, 44 12, 41 8 Z" fill="#1C3A2B" stroke="#C9A45C" strokeWidth="0.6" />
-                    <circle cx="56" cy="8" r="2" fill="#DFBC75" stroke="#152B20" strokeWidth="0.5" />
+                    <path d="M 18 8 C 20 3, 26 4, 23 8 Z" fill="#12241A" stroke="#D8B66A" strokeWidth="0.7" />
+                    <path d="M 36 8 C 38 13, 44 12, 41 8 Z" fill="#1C3A2B" stroke="#D8B66A" strokeWidth="0.7" />
+                    <circle cx="56" cy="8" r="2.2" fill="#D8B66A" stroke="#12241A" strokeWidth="0.5" />
                   </motion.g>
                 </svg>
               </div>

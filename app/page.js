@@ -1,9 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Philosophy from "@/components/Philosophy";
+import OurApproach from "@/components/OurApproach";
 import ProductDiscovery from "@/components/ProductDiscovery";
 import RootedInAyurveda from "@/components/RootedInAyurveda";
-import OurApproach from "@/components/OurApproach";
+import Philosophy from "@/components/Philosophy";
 import DistributorEnquiry from "@/components/DistributorEnquiry";
 import Footer from "@/components/Footer";
 
@@ -18,8 +18,8 @@ export default function Home() {
         {/* Chapter 01: Hero & Brand Promise */}
         <Hero />
 
-        {/* Chapter 02: Rooted Principles & Brand Philosophy */}
-        <Philosophy />
+        {/* Chapter 02: Our Approach (Classical Formulation Process) */}
+        <OurApproach />
 
         {/* Chapter 03: The Collection */}
         <ProductDiscovery />
@@ -27,8 +27,8 @@ export default function Home() {
         {/* Chapter 04: Ayurvedic Heritage (Rooted in Ayurveda) */}
         <RootedInAyurveda />
 
-        {/* Chapter 05: Our Approach */}
-        <OurApproach />
+        {/* Chapter 05: Rooted Principles & Brand Philosophy */}
+        <Philosophy />
 
         {/* Chapter 06: Strategic Alliances & Partner Enquiry */}
         <DistributorEnquiry />

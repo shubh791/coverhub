@@ -22,50 +22,18 @@ export const heroContent = {
     target: "#collections"
   },
   secondaryCta: {
-    label: "Our Philosophy",
-    target: "#philosophy"
+    label: "Our Approach",
+    target: "#approach"
   },
-  transitionText: "Explore the collection",
-  transitionTarget: "#collections",
+  transitionText: "Explore our approach",
+  transitionTarget: "#approach",
   backdropImage: "/images/hero-premium-bg.png",
   backdropImageWebp: "/images/hero-premium-bg.webp",
   productImage: "/images/hero/baalibal-juice.png",
 };
 
-export const philosophyContent = {
-  chapter: "02 / Our Philosophy",
-  eyebrow: "Classical Botanical Formulation",
-  heading: "Tradition, considered for today.",
-  body:
-    "Cover Hub brings traditional wellness thinking into an approachable modern collection. Explore Cover Hub formulations and find clear information about each product before choosing what suits you.",
-  cta: {
-    label: "Explore our products",
-    target: "#collections",
-  },
-  backdropImage: "/images/philosophy-premium-bg.png",
-  backdropImageWebp: "/images/philosophy-premium-bg.webp",
-  imageAlt: "Classical Ayurvedic manuscript, fresh botanicals, brass urn and warm lamp",
-  sanskritVerse: {
-    line1: "हिताहितं सुखं दुःखमायुस्तस्य हिताहितम्।",
-    line2: "मानं च तच्च यत्रोक्तमायुर्वेदः स उच्यते॥",
-    attribution: "चरक संहिता · सूत्रस्थान १.४१",
-    translation: "That which illuminates what is wholesome and unwholesome, joyful and sorrowful for life, its span and true essence — is known as Ayurveda.",
-  },
-};
-
-export const heritageContent = {
-  chapter: "04 / Heritage",
-  label: "AN ANCIENT PRACTICE",
-  heading: "Rooted in Ayurveda",
-  description:
-    "Time-honoured botanicals, thoughtfully brought into modern everyday rituals.",
-  principles: ["Pure Botanicals", "Traditional Wisdom", "Modern Care"],
-  backdropImage: "/images/heritage/ayurvedic-heritage-backdrop.jpg",
-  imageAlt: "Ayurvedic heritage flatlay with ancient palm-leaf manuscript, brass bowl with dried herbs, roots and fresh botanicals on warm parchment",
-};
-
 export const approachContent = {
-  chapter: "05 / Our Approach",
+  chapter: "02 / Our Approach",
   label: "OUR APPROACH",
   heading: "Ancient wisdom, carefully brought to life.",
   subheading: "A seamless journey from sacred botanicals to refined everyday wellness.",
@@ -98,6 +66,38 @@ export const approachContent = {
   ],
 };
 
+export const heritageContent = {
+  chapter: "04 / Heritage",
+  label: "AN ANCIENT PRACTICE",
+  heading: "Rooted in Ayurveda",
+  description:
+    "Time-honoured botanicals, thoughtfully brought into modern everyday rituals.",
+  principles: ["Pure Botanicals", "Traditional Wisdom", "Modern Care"],
+  backdropImage: "/images/heritage/ayurvedic-heritage-backdrop.jpg",
+  imageAlt: "Ayurvedic heritage flatlay with ancient palm-leaf manuscript, brass bowl with dried herbs, roots and fresh botanicals on warm parchment",
+};
+
+export const philosophyContent = {
+  chapter: "05 / Our Philosophy",
+  eyebrow: "Classical Botanical Formulation",
+  heading: "Tradition, considered for today.",
+  body:
+    "Cover Hub brings traditional wellness thinking into an approachable modern collection. Explore Cover Hub formulations and find clear information about each product before choosing what suits you.",
+  cta: {
+    label: "Explore our products",
+    target: "#collections",
+  },
+  backdropImage: "/images/philosophy-premium-bg.png",
+  backdropImageWebp: "/images/philosophy-premium-bg.webp",
+  imageAlt: "Classical Ayurvedic manuscript, fresh botanicals, brass urn and warm lamp",
+  sanskritVerse: {
+    line1: "हिताहितं सुखं दुःखमायुस्तस्य हिताहितम्।",
+    line2: "मानं च तच्च यत्रोक्तमायुर्वेदः स उच्यते॥",
+    attribution: "चरक संहिता · सूत्रस्थान १.४१",
+    translation: "That which illuminates what is wholesome and unwholesome, joyful and sorrowful for life, its span and true essence — is known as Ayurveda.",
+  },
+};
+
 export const partnershipContent = {
   chapter: "06 / Partnership",
   heading: "Let’s grow together.",
@@ -113,9 +113,9 @@ export const partnershipContent = {
 };
 
 export const navLinks = [
-  { label: "Philosophy", href: "#philosophy" },
+  { label: "Our Approach", href: "#approach" },
   { label: "Products", href: "#collections" },
   { label: "Heritage", href: "#heritage" },
-  { label: "Our Approach", href: "#approach" },
+  { label: "Philosophy", href: "#philosophy" },
   { label: "Partner With Us", href: "#partnerships" },
 ];

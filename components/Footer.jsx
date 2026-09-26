@@ -92,19 +92,19 @@ export default function Footer() {
               <ul className="space-y-2.5 text-xs sm:text-sm">
                 <li>
                   <a
-                    href="#collections"
+                    href="#approach"
                     className="text-[#DED3BA] hover:text-[#C9A45C] transition-colors relative inline-block py-0.5 group focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#C9A45C]"
                   >
-                    <span>Products</span>
+                    <span>Our Approach</span>
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-[#C9A45C] transition-all duration-300 group-hover:w-full" />
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#philosophy"
+                    href="#collections"
                     className="text-[#DED3BA] hover:text-[#C9A45C] transition-colors relative inline-block py-0.5 group focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#C9A45C]"
                   >
-                    <span>Our Philosophy</span>
+                    <span>Products</span>
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-[#C9A45C] transition-all duration-300 group-hover:w-full" />
                   </a>
                 </li>
@@ -119,10 +119,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#approach"
+                    href="#philosophy"
                     className="text-[#DED3BA] hover:text-[#C9A45C] transition-colors relative inline-block py-0.5 group focus:outline-hidden focus-visible:ring-1 focus-visible:ring-[#C9A45C]"
                   >
-                    <span>Our Approach</span>
+                    <span>Our Philosophy</span>
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-[#C9A45C] transition-all duration-300 group-hover:w-full" />
                   </a>
                 </li>

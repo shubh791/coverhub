@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { philosophyContent } from "@/data/content";
 
 /**
- * Chapter 02: Our Philosophy — Full-Width Atmospheric Botanical Composition
+ * Chapter 05: Our Philosophy — Full-Width Atmospheric Botanical Composition
  * 
  * Features:
  * - Full-width /images/philosophy-premium-bg.png (with WebP optimization & PNG fallback).
@@ -109,7 +109,7 @@ export default function Philosophy() {
               viewport={{ once: true, margin: "-40px" }}
               className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center max-w-xl lg:max-w-none"
             >
-              {/* Chapter 02 Ayurvedic Manuscript Marker */}
+              {/* Chapter 05 Ayurvedic Manuscript Marker */}
               <motion.div variants={textItemVariants} className="mb-4 sm:mb-5">
                 <div className="relative inline-flex items-center gap-2 sm:gap-2.5 py-1 pr-3 sm:pr-4 pl-0.5 select-none">
                   {/* Enhanced parchment brush texture for crisp contrast */}
@@ -124,7 +124,7 @@ export default function Philosophy() {
                     className="relative z-10 w-7 h-7 rounded-full bg-gradient-to-tr from-[#0E1C14] to-[#1C3A2B] border border-[#D8B66A] shadow-[0_0_14px_rgba(216,182,106,0.4)] flex items-center justify-center shrink-0"
                   >
                     <span className="font-serif text-[11px] font-bold text-[#D8B66A] leading-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                      02
+                      05
                     </span>
                     <span className="absolute -inset-0.5 rounded-full border border-[#D8B66A]/45 pointer-events-none" />
                   </motion.div>
@@ -132,7 +132,7 @@ export default function Philosophy() {
                   {/* Manuscript Typography & Animated Botanical Stem */}
                   <div className="relative z-10 flex items-center gap-1.5 sm:gap-2 flex-wrap sm:flex-nowrap">
                     <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#D8B66A] font-bold drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-                      Chapter 02
+                      Chapter 05
                     </span>
                     <span className="text-[#D8B66A] text-xs font-serif font-bold">·</span>
                     <span className="font-serif text-[12.5px] sm:text-xs text-[#FFF7E6] tracking-wider italic font-medium drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
